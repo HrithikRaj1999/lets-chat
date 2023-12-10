@@ -1,18 +1,31 @@
+"use client";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
+import { useLogin } from "@/hooks/useLogin";
 import Image from "next/image";
-import React from "react";
 import { FcGoogle } from "react-icons/fc";
-const login = () => {
+const Login = () => {
+  const { handleLogin } = useLogin();
   return (
-    <div className="flex justify-center items-center bg-slate-700 h-screen w-screen flex-col gap-6">
-      <div className="flex flex-col items-center justify-center">
-        <Image src="/lets-chat.png"  className='rounded-sm p-0 m-0'alt="lets-chat" width={300} height={300} />
-        <button className="flex  items-center justify-center gap-7 bg-black   p-2 rounded-md">
-          <FcGoogle/>
+    <MaxWidthWrapper>
+      {" "}
+      <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
+        <Image
+          src="/lets-chat.png"
+          className="rounded-sm p-0 m-0"
+          alt="lets-chat"
+          width={400}
+          height={400}
+        />
+        <button
+          className="flex  items-center justify-center gap-x-7 bg-black p-4 rounded-md"
+          onClick={handleLogin}
+        >
+          <FcGoogle />
           <span className="text-white text-md">Login With Google</span>
         </button>
       </div>
-    </div>
+    </MaxWidthWrapper>
   );
 };
 
-export default login;
+export default Login;

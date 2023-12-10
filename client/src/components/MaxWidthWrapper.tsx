@@ -1,0 +1,16 @@
+"use client"
+import { ReactNode } from "react";
+const MaxWidthWrapper = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children: ReactNode;
+}) => {
+  return (
+    <div className="mx-auto w-full max-w-screen-3xl h-screen px-2.5 md:px-20 bg-black">
+      {children}
+    </div>
+  );
+};
+export default MaxWidthWrapper;
